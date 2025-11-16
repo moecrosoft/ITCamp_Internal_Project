@@ -1,1 +1,4 @@
-# ITCamp_Internal_Project
+Project Name: ITCamp_Internal_Project
+Team Name: Michelle's Kids
+
+Team Members
