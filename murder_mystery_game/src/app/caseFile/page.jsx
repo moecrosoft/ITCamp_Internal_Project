@@ -1,64 +1,78 @@
 "use client";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import stories from '../../data/stories.json';
+import { useSearchParams, useRouter } from "next/navigation";
+import { STORIES } from "@/lib/stories";
 
-export default function Story() {
-  const [levelData, setLevelData] = useState(null);
-  const [levelId, setLevelId] = useState(null);
+export default function CaseFilePage() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
-  // The actual JSON data (you can also move this to a separate file)
-  const storiesData = stories
+  const storyId = searchParams.get("storyId");
+  const story = STORIES[storyId];
 
-  useEffect(() => {
-    // 1. Grab the ID from localStorage
-    const savedId = localStorage.getItem('currentLevel');
-    
-    if (savedId && storiesData[savedId]) {
-      setLevelId(savedId);
-      setLevelData(storiesData[savedId]);
-    }
-  }, []);
-
-  // Show a loading state or error if the data hasn't loaded yet
-  if (!levelData) {
-    return <div className="min-h-screen bg-white flex items-center justify-center text-black">Loading Story...</div>;
+  if (!story) {
+    return (
+      <div className="min-h-screen bg-zinc-950 text-white flex items-center justify-center px-6">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold mb-6 text-red-500">
+            Case not found
+          </h1>
+          <button
+            onClick={() => router.push("/levels")}
+            className="px-6 py-3 rounded-xl bg-red-800 hover:bg-red-700 transition font-semibold"
+          >
+            Back to Levels
+          </button>
+        </div>
+      </div>
+    );
   }
 
-  return (
-    <div className="min-h-screen w-full bg-white p-8 flex flex-col">
-      <div className="flex-1 flex items-center justify-center">
-        <div className="bg-yellow-300 text-black p-12 max-w-3xl shadow-2xl border-2 border-black">
-          
-          <h2 className="text-4xl font-bold mb-6 uppercase tracking-widest border-b-2 border-black pb-2">
-            Case #{levelId}: The Mystery
-          </h2>
-          
-          {/* Main Description */}
-          <p className="text-xl leading-relaxed mb-8 font-serif">
-            {levelData.desc}
-          </p>
+  const { title, casefile } = story;
 
-          <h3 className="text-2xl font-bold mb-4 underline">The Suspects:</h3>
-          
-          {/* Character List */}
-          <ul className="space-y-4">
-            {Object.entries(levelData.char).map(([name, description]) => (
-              <li key={name} className="bg-white/50 p-3 rounded border border-black/10">
-                <strong className="text-red-700">{name}:</strong> {description}
-              </li>
-            ))}
-          </ul>
-          
-          <div className="mt-10 flex justify-between items-center">8            
-            <Link href={'../suspects'}>
-              <button
-                className="px-10 py-4 bg-black text-white font-bold hover:bg-gray-800 transition-all active:scale-95 shadow-lg"
-              >
-                Start Investigation
-              </button>
-            </Link>
+  return (
+    <div className="min-h-screen bg-zinc-950 text-white px-6 py-16 flex justify-center">
+      <div className="w-full max-w-4xl">
+
+        <div className="bg-zinc-900 border border-red-900/40 rounded-2xl shadow-2xl shadow-red-900/20 p-10">
+
+          <h1 className="text-4xl font-bold mb-3">
+            {title}
+          </h1>
+
+          <h2 className="text-xl text-red-500 mb-8 tracking-wide">
+            {casefile.headline}
+          </h2>
+
+          <div className="space-y-6 text-zinc-300 leading-relaxed whitespace-pre-line">
+            {casefile.overview}
+          </div>
+
+          <div className="mt-10 p-6 rounded-xl bg-zinc-800/60 border border-red-900/30">
+            <h3 className="text-lg font-semibold text-red-500 mb-3">
+              Your Objective
+            </h3>
+            <p className="text-zinc-300 whitespace-pre-line">
+              {casefile.objective}
+            </p>
+          </div>
+
+          <div className="mt-12 flex justify-between">
+            <button
+              onClick={() => router.push("/levels")}
+              className="px-6 py-3 cursor-pointer rounded-xl bg-zinc-700 hover:bg-zinc-600 transition font-medium"
+            >
+              Back
+            </button>
+
+            <button
+              onClick={() =>
+                router.push(`/suspects?storyId=${storyId}`)
+              }
+              className="px-6 py-3 cursor-pointer rounded-xl bg-red-800 hover:bg-red-700 transition font-semibold shadow-lg shadow-red-900/40"
+            >
+              Interrogate
+            </button>
           </div>
 
         </div>
