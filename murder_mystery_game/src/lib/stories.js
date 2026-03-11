@@ -270,5 +270,212 @@ When you are certain — accuse.
         }
       }
     }
+  },
+
+  sterling_estate: {
+    id: 'sterling_estate',
+    title: 'The Murder at the Sterling Estate',
+
+    casefile: {
+      headline: 'The Master of the House Found Dead in His Study',
+      overview: `
+Reginald Sterling, the iron-fisted master of the Sterling estate, was discovered dead in his private study at 2:00 PM. 
+
+It was supposed to be a quiet afternoon. His wife was tending to matters indoors, the staff were going about their daily routines, and his son was expected for a visit. But behind closed doors, a violent confrontation took place. 
+
+The killer tried to cover their tracks, slipping through the shadows of the estate and putting on a performance for the rest of the household. Yet, everyone in the house has their own secrets, and the estate's staff—from the meticulous maid to the quiet gardener—each hold a piece of the puzzle.
+
+Someone in the Sterling household thought they could get away with murder.
+      `,
+      objective: `
+Interrogate the family and staff. Pay close attention to their timelines, their physical state, and what they claim to have seen. Pierce through their personal lies to uncover the hidden truth.
+
+When you are certain, make your accusation.
+      `
+    },
+
+    truth: {
+      murderer: 'son',
+      weapon: 'heavy paperweight',
+      motive: 'Rage over discovering his father was changing the will to cut him off entirely.'
+    },
+
+    setting: {
+      location: 'The Sterling Estate',
+      atmosphere: 'A sprawling, wealthy mansion with manicured gardens, a grand driveway, and a quiet, tense interior.',
+      time: 'Early afternoon, a cool day. The critical window is between 1:10 PM and 2:00 PM.'
+    },
+
+    backstory: {
+      familyHistory: 'The Sterling fortune is vast, but the family dynamics are strained by greed and emotional distance.',
+      hiddenScandal: 'Arthur, the sole heir, is bleeding money at high-stakes clubs and is desperate for cash.',
+      financialPressure: 'Reginald was in the process of rewriting his will to protect his assets from his son.',
+      recentEvent: 'Arthur showed up unannounced to "borrow" money from his father\'s safe.'
+    },
+
+    timeline: {
+      13.10: 'Arthur enters via the Side Gate. Eleanor sees him from the Dining Hall.',
+      13.30: 'Violent argument in the Study. Arthur murders Reginald.',
+      13.35: 'Eleanor, frightened by the shouting, retreats to the kitchen with Maria.',
+      13.45: 'Arthur tries to clean up. Gary the Gardener sees his shadow in the Study window.',
+      13.50: 'Arthur slips out the Side Gate, leaving it ajar.',
+      13.55: 'Arthur "arrives" at the front door. Tommy notices his muddy shoes. Gary locks the Side Gate.',
+      14.00: 'Maria brings tea to the Study, finds the body, and screams.'
+    },
+
+    victim: {
+      name: 'Reginald Sterling',
+      role: 'Master of the Estate',
+      personality: 'Strict, wealthy, commanding.',
+      reputation: 'A successful businessman who ruled his household with an iron fist.'
+    },
+
+    environmentClues: {
+      study: [
+        'A heavy paperweight is missing from the desk.',
+        'Signs of frantic, rushed cleaning on the desk and floor.'
+      ],
+      exterior: [
+        'The Side Gate was found unlocked and slightly ajar at 1:55 PM.',
+        'Dark garden mulch is present on the front foyer floor.'
+      ]
+    },
+
+    characters: {
+      wife: {
+        id: 'wife',
+        name: 'Eleanor Sterling',
+        role: 'The Wife',
+        personality: 'Sophisticated, Stoic, Observant.',
+        alibi: 'In the kitchen with the maid getting calming tea.',
+        secrets: [
+          'She has been secretly siphoning money from Reginald\'s accounts.',
+          'She heard the violent shouting from the study but was too afraid to intervene.'
+        ],
+        lies: [
+          'Claims she was in the greenhouse all afternoon to avoid admitting she was near the study.'
+        ],
+        knows: [
+          'Saw Arthur walking outside at 1:10 PM but he never came through the front door.'
+        ],
+        subtleClues: {
+          surface: [
+            'Visibly upset, shaking, and pale long before the body was discovered.'
+          ]
+        },
+        relationships: {
+          son: 'Frets over his happiness, blindly protective.',
+          maid: 'Relies on her for emotional support and comfort.'
+        }
+      },
+
+      son: {
+        id: 'son',
+        name: 'Arthur Sterling',
+        role: 'The Son',
+        personality: 'Arrogant, Desperate, Sharp.',
+        alibi: 'Claims his car broke down on the back dirt road and he jogged to the house.',
+        secrets: [
+          'He used an old key to sneak in through the side gate at 1:10 PM.',
+          'He killed his father with a paperweight after learning about the will.'
+        ],
+        lies: [
+          'Claims the garden mulch and sweat are from jogging through the woods after his car died.',
+          'Denies ever being inside the study before 2:00 PM.'
+        ],
+        knows: [
+          'Knows the contents of the new will his father was drafting.'
+        ],
+        subtleClues: {
+          surface: [
+            'Sweating profusely despite the cool weather.',
+            'Keeps checking his flashy luxury watch nervously.'
+          ]
+        },
+        relationships: {
+          victim: 'Deep resentment over money and control.',
+          driver: 'Acts overly casual with him to establish his fake arrival time.'
+        }
+      },
+
+      maid: {
+        id: 'maid',
+        name: 'Maria Rossi',
+        role: 'The Maid',
+        personality: 'Meticulous, Observant, Sharp-tongued.',
+        alibi: 'In the kitchen preparing afternoon tea from 1:35 PM to 2:00 PM.',
+        secrets: [
+          'She was snooping through Reginald\'s bedroom at 12:30 PM looking for loose cash.'
+        ],
+        lies: [
+          'Lies about her exact cleaning schedule to cover up her snooping.'
+        ],
+        knows: [
+          'Saw a car matching Arthur\'s hidden behind trees down the road at 12:30 PM.',
+          'Noticed the locked side gate was wide open at 1:30 PM.'
+        ],
+        subtleClues: {
+          surface: [
+            'Gets highly defensive if asked about the master bedroom.'
+          ]
+        },
+        relationships: {
+          wife: 'Acts as her confidant, but secretly judges her.',
+          gardener: 'Noticed his break schedule to sneak into the upstairs rooms.'
+        }
+      },
+
+      driver: {
+        id: 'driver',
+        name: 'Thomas "Tommy" Miller',
+        role: 'The Driver',
+        personality: 'Loyal, Stoic, Apathetic.',
+        alibi: 'In the garage buffing the car wax and listening to the radio.',
+        secrets: [
+          'Reginald had threatened to fire him next week because his eyesight is failing.'
+        ],
+        lies: [
+          'Might pretend he didn\'t hear the argument because he resents Reginald.'
+        ],
+        knows: [
+          'Arthur arrived on foot looking disheveled and out of breath at 1:50 PM.',
+          'Arthur ducked behind a hedge to wipe his face before approaching the door.'
+        ],
+        subtleClues: {
+          surface: [
+            'Squints frequently; cleans his glasses more than necessary.'
+          ]
+        },
+        relationships: {
+          son: 'Observes his erratic behavior but doesn\'t usually intervene.'
+        }
+      },
+
+      gardener: {
+        id: 'gardener',
+        name: 'Gary',
+        role: 'The Gardener',
+        personality: 'Quiet, Introverted, Nature-loving.',
+        alibi: 'Tending to the flowers in the West Garden.',
+        secrets: [
+          'He avoids social interaction at all costs, which is why he didn\'t report the open gate immediately.'
+        ],
+        lies: [
+          'Initially denies seeing anything near the study to avoid getting involved with the police.'
+        ],
+        knows: [
+          'Saw the usually locked side gate slightly ajar and locked it himself around 1:55 PM.',
+          'Saw a distinct shadow moving frantically inside the study at 1:45 PM.'
+        ],
+        subtleClues: {
+          surface: [
+            'Keeps his head down, avoids eye contact when spoken to, grips his hat tightly.'
+          ]
+        },
+        relationships: {
+          maid: 'Avoids her; works his schedule around others to be entirely alone.'
+        }
+      }
+    }
   }
 };
