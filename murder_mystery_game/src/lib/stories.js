@@ -477,5 +477,174 @@ When you are certain, make your accusation.
         }
       }
     }
+  },
+  knives_out: {
+    id: 'knives_out',
+    title: 'The Blood on the Estate',
+
+    casefile: {
+      headline: 'Famed Mystery Author Found Dead in His Study',
+      overview: `
+Harlan, a massively wealthy crime novelist, was found dead in his attic study the morning after his 85th birthday party. His throat was slit, and the knife was still in his hand. 
+
+At first glance, it looks like a tragic suicide. However, an anonymous tip brought the police back to the estate. The family had been gathering to celebrate, but tensions were high, and Harlan had been having private, heated conversations with his children all night. 
+
+The most crucial piece of the puzzle is the coroner's report: despite rumors of a medical emergency, Harlan's toxicology report came back completely clean. No drugs, no poison. 
+
+Just a house full of greedy relatives, a terrified nurse, and a lot of muddy footprints.
+      `,
+      objective: `
+Interrogate the family and the nurse. Someone in this house orchestrated this death, but their plan didn't go exactly as they intended. Compare their assumptions against the hard facts of the police report.
+
+When you catch the mastermind in a lie they cannot explain, make your accusation.
+      `,
+      crimeSceneNotes: [
+        'Cause of death: A single self-inflicted knife wound to the neck.',
+        'Toxicology Report: 100% clean. Zero traces of poison or medication in the bloodstream.',
+        'A piece of the wooden trellis outside the study window is snapped.',
+        'There are traces of dried mud on the study windowsill.'
+      ]
+    },
+
+    truth: {
+      murderer: 'hugh',
+      weapon: 'Tampered medicine bottles (failed), leading to suicide',
+      motive: 'Harlan cut him out of the will entirely. He wanted to frame the nurse to invalidate the new will.'
+    },
+
+    setting: {
+      location: 'The Thrombey Estate',
+      atmosphere: 'A massive, gothic mansion filled with fake prop weapons, hidden windows, and dark wood paneling. It feels like a giant Clue board.',
+      time: 'The morning after the birthday party. The critical window is midnight to 2:00 AM.'
+    },
+
+    backstory: {
+      familyHistory: 'Harlan built a publishing empire from nothing. His family is entirely dependent on his wealth.',
+      hiddenScandal: 'Harlan changed his will the night he died, leaving absolutely everything to his nurse.',
+      financialPressure: 'Harlan cut off his son\'s allowance, fired his other son from the company, and discovered his son-in-law was cheating.',
+      recentEvent: 'Harlan had a massive, screaming fight with his grandson, Hugh, who stormed out of the party early.'
+    },
+
+    timeline: {
+      23.30: 'Harlan and Marta go upstairs to the study to play Go. The rest of the family goes to bed.',
+      23.45: 'Marta administers Harlan\'s medication. Harlan slits his own throat.',
+      "00.00": 'Marta leaves through the front door, seen by Walt.',
+      "00.15": 'Marta sneaks back onto the estate, climbs the broken trellis, and puts on a disguise to be seen by Lin.',
+      "01.00": 'Hugh sneaks onto the estate to retrieve the tampered medicine bottles but is scared off by the dogs.'
+    },
+
+    victim: {
+      name: 'Harlan',
+      role: 'The Patriarch',
+      personality: 'Brilliant, stubborn, dramatic.',
+      reputation: 'A genius writer who finally decided to stop coddling his spoiled family.'
+    },
+
+    characters: {
+      nurse: {
+        id: 'nurse',
+        name: 'Marta',
+        role: 'The Caregiver',
+        personality: 'Kind, anxious, terrified.',
+        alibi: 'Claims she left at midnight and drove straight home.',
+        secrets: [
+          'She thinks she accidentally gave Harlan a lethal overdose of morphine because the labels were switched.',
+          'She knows Harlan killed himself to protect her from a manslaughter charge.',
+          'She climbed the trellis to fake Harlan\'s time of death.'
+        ],
+        lies: [
+          'She will lie about the timeline and the broken trellis to protect Harlan\'s final plan.'
+        ],
+        knows: [
+          'She physically cannot lie without becoming violently nauseous.'
+        ],
+        subtleClues: {
+          surface: [
+            'Sweats profusely and covers her mouth when asked direct questions about her timeline.'
+          ]
+        },
+        relationships: {
+          victim: 'Loved him like a father; is devastated by his death.',
+          grandson: 'Wary of Hugh, but desperate enough for help to trust him.'
+        }
+      },
+
+      grandson: {
+        id: 'grandson',
+        name: 'Hugh',
+        role: 'The Mastermind',
+        personality: 'Arrogant, smug, privileged.',
+        alibi: 'Claims he left the party at 10:00 PM after a fight and drove into the city.',
+        secrets: [
+          'He switched the medicine labels to trick Marta into killing Harlan with morphine.',
+          'He sneaked back at 1:00 AM to steal the bottles back, but the dogs barked at him.'
+        ],
+        lies: [
+          'Claims he has no idea why Harlan killed himself or what happened with the will.'
+        ],
+        knows: [
+          'He believes, with absolute certainty, that Harlan died of a morphine overdose before slitting his throat.'
+        ],
+        subtleClues: {
+          surface: [
+            'Acts completely unbothered by the death; wears an expensive, thick cable-knit sweater.'
+          ]
+        },
+        relationships: {
+          victim: 'Hated him for cutting him out of the will.',
+          nurse: 'Pretends to be her ally, but is secretly framing her.'
+        }
+      },
+
+      daughter: {
+        id: 'daughter',
+        name: 'Lin',
+        role: 'The Eldest Daughter',
+        personality: 'Fierce, protective, intimidating.',
+        alibi: 'Was asleep in her room on the second floor.',
+        secrets: [
+          'Harlan was about to expose her husband for having an affair.'
+        ],
+        lies: [
+          'Might downplay the tension in the family to protect their public image.'
+        ],
+        knows: [
+          'She woke up at 12:15 AM and saw "Harlan" (actually Marta in a disguise) walk past the study window.'
+        ],
+        subtleClues: {
+          surface: [
+            'Speaks very highly of her self-made business, deeply defensive of her father.'
+          ]
+        },
+        relationships: {
+          victim: 'Deeply respected him; they communicated through secret invisible ink letters.'
+        }
+      },
+
+      son: {
+        id: 'son',
+        name: 'Walt',
+        role: 'The Youngest Son',
+        personality: 'Insecure, desperate, weak-willed.',
+        alibi: 'Smoking a cigar on the porch at midnight.',
+        secrets: [
+          'Harlan fired him from the publishing company that very night.'
+        ],
+        lies: [
+          'Claims he and Harlan had a great conversation and a mutual parting of ways.'
+        ],
+        knows: [
+          'He saw Marta leave the house at exactly midnight.'
+        ],
+        subtleClues: {
+          surface: [
+            'Fidgets with his cane, gets incredibly defensive about his role in the publishing company.'
+          ]
+        },
+        relationships: {
+          victim: 'Resented him for never letting him have real control over the business.'
+        }
+      }
+    }
   }
 };
