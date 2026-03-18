@@ -88,9 +88,9 @@ export default function Home() {
           </div>
         </nav>
 
-        <section className="fixed right-[clamp(4rem,10vw,9rem)] top-[clamp(7rem,24vh,18rem)] z-20 w-fit text-center">
+        <section className="fixed right-[clamp(1rem,6vw,6rem)] top-[clamp(3rem,24vh,16rem)] z-20 w-[clamp(10rem,42vw,58rem)] text-center">
           <h1
-            className={`${nosifer.className} landing-title landing-title-pulse text-[clamp(2rem,6vw,4.5rem)] leading-[1.5] tracking-[clamp(0.12em,0.3em,0.3em)] text-[#B22222] drop-shadow-[0_0_18px_rgba(0,0,0,0.85)]`}
+            className={`${nosifer.className} landing-title landing-title-pulse text-[clamp(0.5rem,4.5vw,4.5rem)] leading-[1.35] tracking-[clamp(0.14em,0.18em,0.22em)] text-[#B22222] drop-shadow-[0_0_18px_rgba(0,0,0,0.85)]`}
             style={{
               textShadow: `
                 0 0 4px rgba(178, 34, 34, 0.22),
