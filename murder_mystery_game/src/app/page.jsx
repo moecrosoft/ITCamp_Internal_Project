@@ -82,7 +82,7 @@ export default function Home() {
       <div className="relative z-10 min-h-dvh">
         <nav className="fixed bottom-[clamp(3rem,9vh,8rem)] left-[clamp(3rem,9vw,8rem)] z-20">
           <div className="flex flex-col items-start gap-5 md:gap-7">
-            <MenuButton href="/cases">Play</MenuButton>
+            <MenuButton href="/menu">Play</MenuButton>
             <MenuButton href="/suspects">Credit</MenuButton>
             <MenuButton onClick={() => setShowQuitModal(true)}>Quit</MenuButton>
           </div>
@@ -124,7 +124,7 @@ export default function Home() {
                   textShadow: "0 6px 20px rgba(0, 0, 0, 0.8)",
                 }}
               >
-                You're Next
+                You&apos;re Next
               </p>
               <p
                 className={`${caesarDressing.className} absolute inset-0 flex items-center justify-center whitespace-nowrap text-[clamp(2.2rem,5.5vw,5.2rem)] uppercase tracking-[0.14em] text-white transition-opacity duration-200 ${
@@ -134,7 +134,7 @@ export default function Home() {
                   textShadow: "0 6px 20px rgba(0, 0, 0, 0.8)",
                 }}
               >
-                For now... you're safe
+                For now... you&apos;re safe
               </p>
             </div>
 
