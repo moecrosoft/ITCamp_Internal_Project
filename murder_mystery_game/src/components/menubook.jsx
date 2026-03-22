@@ -84,7 +84,7 @@ export default function BookTestimonials({
                 Case 1
               </h1>
               <div className="mt-6 border-b border-[#6d4c38]/40 pb-4 text-center text-sm italic">
-                Meow Meow Meow
+                The fucking case 1
               </div>
 
               <div className="mt-8 flex flex-col items-center gap-8">
@@ -137,39 +137,21 @@ export default function BookTestimonials({
                 Case 2
               </h1>
               <div className="mt-6 border-b border-[#6d4c38]/40 pb-4 text-center text-sm italic">
-                Woof Woof Woof
+                MEOW
               </div>
               <div className="mt-10 text-sm leading-7">
                 <p>
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
+                  {"Meow Meow Meow Meow Meow\n".repeat(10)}
                 </p>
               </div>
               <div className="mt-10 text-sm leading-7">
                 <p>
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
+                  {"Meow Meow Meow Meow Meow\n".repeat(10)}
                 </p>
               </div>
               <div className="mt-10 text-sm leading-7">
                 <p>
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
-                  Woof Woof Woof Woof Woof Woof Woof
+                  {"Meow Meow Meow Meow Meow\n".repeat(5)}
                 </p>
               </div>
             </div>
@@ -215,8 +197,8 @@ export default function BookTestimonials({
               <h1 className="mt-4 text-center font-serif text-3xl font-bold tracking-wide">
                 Case 4
               </h1>
-              <h1 className="mt-80 text-center font-serif text-5xl font-light tracking-wide">
-                Coming Soon
+              <h1 className="mt-80 text-center font-serif text-xl text-[#B22222] font-light tracking-wide">
+                will continue if someone die...
               </h1>
             </div>
           </div>
