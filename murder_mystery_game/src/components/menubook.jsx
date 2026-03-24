@@ -5,9 +5,22 @@ import HTMLFlipBook from 'react-pageflip';
 import { useMediaQuery } from '@react-hook/media-query';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Cinzel, IM_Fell_English_SC } from "next/font/google";
 
 const PAGE_WIDTH = 650;
 const PAGE_HEIGHT = 800;
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: "800",
+});
+
+const imfell = IM_Fell_English_SC({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+
 
 export default function BookTestimonials({
   testimonials,
@@ -69,6 +82,53 @@ export default function BookTestimonials({
         }}
 
         >
+          <div className="flex h-full w-full items-center justify-end">
+            <div
+              className="translate-x-35 translate-y-2 flex h-[96%] w-[78%] flex-col justify-start px-10 py-10 text-[#2b1d14]"
+              style={{
+                backgroundImage: "url('/leftpaper.png')",
+                backgroundSize: '100% 100%',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
+
+              <div className="flex flex-col items-center mt-8">
+                <Link href="/" className="group block">
+                  <Image
+                    src="/backtomenu.png"
+                    alt="Back to main menu"
+                    width={400}
+                    height={600}
+                    className="object-contain hover:scale-[1.05]"
+                  />
+                </Link>
+
+                <h1 className={`${imfell.className} text-center text-4xl text-[#5A0F0F] -translate-y-5`}>
+                  Main Menu
+                </h1>
+              </div>
+            </div>
+          </div>
+
+          {/* Right index page */}
+          <div className="flex h-full w-full items-center justify-start">
+            <div
+              className="-translate-x-3 flex translate-y-2 h-[96%] w-[78%] flex-col px-12 py-10 text-[#2b1d14]"
+              style={{
+                backgroundImage: "url('/rightpaper.png')",
+                backgroundSize: '100% 100%',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
+              
+                <h1 className={`${imfell.className} mt-80 text-center text-6xl text-[#5A0F0F]`}>
+                  Cases
+                </h1>
+            </div>
+          </div>
+
           {/* Left page */}
           <div className="flex h-full w-full items-center justify-end">
             <div
