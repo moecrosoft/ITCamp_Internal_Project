@@ -165,7 +165,7 @@ export default function BookTestimonials({
 
                     <div className="absolute aspect-16/10 inset-[10%] overflow-hidden w-[20rem] rounded-[0.3rem] translate-x-5.5 translate-y-4 rotate-1">
                     <Image
-                      src="/caseone.png"
+                      src="/caseonebg.png"
                       alt="Open Case 1"
                       fill
                       className="object-cover transition duration-500 group-hover:scale-[1.2]"
@@ -175,7 +175,7 @@ export default function BookTestimonials({
                 </Link>
               </div>
               <div className="flex flex-col items-center gap-6 mt-6">
-                <p className={`${cinzel.className} -mt-5 text-center text-sm text-[#5A0F0F]`}>
+                <p className={`${cinzel.className} -mt-10 text-center text-sm text-[#5A0F0F]`}>
                     {sterling.casefile.headline}
                 </p>
                 <div className="transition-all duration-300 hover:scale-0 hover:opacity-0">
@@ -204,10 +204,10 @@ export default function BookTestimonials({
               <p className={`${imfell.className} mt-18 text-center text-m text-[#5A0F0F] leading-8`}>
                   {sterling.casefile.overview}
               </p>
-              <p className={`${cinzel.className} mt-6 text-center text-xs text-[#5A0F0F]/80 leading-6`}>
+              <div className={`${cinzel.className} mt-6 text-center text-xs text-[#5A0F0F]/80 leading-6`}>
                   <h1 className="font-bold text-xl">Objective</h1>
                   {sterling.casefile.objective}
-              </p>
+              </div>
             </div>
           </div>
 
@@ -250,18 +250,27 @@ export default function BookTestimonials({
                   </div>
                 </Link>
               </div>
-              <div className="flex flex-col items-center gap-6 mt-6">
-                <p className={`${cinzel.className} -mt-5 text-center text-sm text-[#5A0F0F]`}>
-                    {ko.casefile.headline}
-                </p>
-                <div className="transition-all duration-300 hover:scale-0 hover:opacity-0">
+              <div className="flex flex-col items-center -mt-4">
+                <div className="-mb-16 -rotate-10 opacity-0 transition-all duration-300 hover:opacity-100">
                   <Image
-                        src="/paperweight.png"
-                        alt="Heavy paperweight"
-                        width="80"
-                        height="100"
+                        src="/knife.png"
+                        alt="Syringe"
+                        width="200"
+                        height="400"
                       />
                 </div>
+                <p className={`${cinzel.className} text-center text-sm text-[#5A0F0F] whitespace-pre-line`}>
+                  Famed Mystery Author <span className="mx-8"></span>Found Dead in His Study
+                </p>
+                <div className="mt-15 translate-x-40">
+                  <Image
+                        src="/syr.png"
+                        alt="Syringe"
+                        width="100"
+                        height="200"
+                      />
+                </div>
+                
               </div>
             </div>
           </div>
@@ -280,10 +289,10 @@ export default function BookTestimonials({
               <p className={`${imfell.className} mt-18 text-center text-m text-[#5A0F0F] leading-8`}>
                   {ko.casefile.overview}
               </p>
-              <p className={`${cinzel.className} mt-6 text-center text-xs text-[#5A0F0F]/80 leading-6`}>
+              <div className={`${cinzel.className} mt-6 text-center text-xs text-[#5A0F0F]/80 leading-6`}>
                   <h1 className="font-bold text-xl">Objective</h1>
                   {ko.casefile.objective}
-              </p>
+              </div>
             </div>
           </div>
 
@@ -342,7 +351,7 @@ export default function BookTestimonials({
             </div>
           </div>
 
-          {/* Case 2 right page */}
+          {/* Case 3 right page */}
           <div className="flex h-full w-full items-center justify-start">
             <div
               className="-translate-x-3 flex translate-y-2 h-[96%] w-[78%] flex-col px-12 py-10 text-[#2b1d14]"
@@ -356,10 +365,10 @@ export default function BookTestimonials({
               <p className={`${imfell.className} mt-18 text-center text-m text-[#5A0F0F] leading-7`}>
                   {itc.casefile.overview}
               </p>
-              <p className={`${cinzel.className} mt-6 text-center text-xs text-[#5A0F0F]/80 leading-6`}>
+              <div className={`${cinzel.className} mt-6 text-center text-xs text-[#5A0F0F]/80 leading-6`}>
                   <h1 className="font-bold text-xl">Objective</h1>
                   {itc.casefile.objective}
-              </p>
+              </div>
             </div>
           </div>
         </HTMLFlipBook>

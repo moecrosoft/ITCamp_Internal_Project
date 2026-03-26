@@ -42,12 +42,12 @@ export default function CaseOne() {
     setIsCasefileOpen((open) => !open);
   };
 
-  const actionButtonClassName = `${caesarDressing.className} rounded-full bg-[#B22222] px-8 py-3 text-l uppercase tracking-[0.14em] text-white transition hover:bg-[#C30F16]`;
+  const actionButtonClassName = `${caesarDressing.className} text-4xl tracking-[0.14em] text-white transition hover:text-[#B22222]`;
 
   return (
     <main className="relative min-h-dvh overflow-hidden bg-black text-white">
       <Image
-        src="/caseone.png"
+        src="/caseonebg.png"
         alt="Case 1 background"
         fill
         priority
@@ -58,12 +58,6 @@ export default function CaseOne() {
 
       <div className="relative z-10 flex min-h-dvh flex-col">
         <div className="relative flex items-start justify-center px-6 py-6 md:px-10">
-            <Link
-                href="/menu"
-                className={`${actionButtonClassName} absolute left-6 top-6 md:left-10 md:top-6`}
-                >
-                BACK
-            </Link>
 
           <button
             type="button"
@@ -77,6 +71,49 @@ export default function CaseOne() {
                 height="50"
             />
           </button>
+
+          {/* Son */}
+          <Link
+            href="/interrogation"
+            className="group relative w-fit"
+          >
+            <Image
+              src="/c_assets/son_idle.png"
+              alt="Son idle"
+              width={200}
+              height={200}
+              className="fixed right-120 bottom-40 transition-opacity duration-300 group-hover:opacity-0"
+            />
+            <Image
+              src="/c_assets/son_hover.png"
+              alt="Son hover"
+              width={200}
+              height={200}
+              className="fixed right-120 bottom-40 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            />
+          </Link>
+
+          {/* Wife */}
+          <Link
+            href="/interrogation"
+            className="group relative w-fit"
+          >
+            <Image
+              src="/c_assets/wife_idle.png"
+              alt="Wife idle"
+              width={200}
+              height={200}
+              className="fixed left-43 bottom-25 transition-opacity duration-300 group-hover:opacity-0"
+            />
+            <Image
+              src="/c_assets/wife_hover.png"
+              alt="Wife hover"
+              width={200}
+              height={200}
+              className="fixed left-43 bottom-25 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            />
+          </Link>
+           
         </div>
 
         <div className="flex flex-1 items-end px-6 pb-10 md:px-10">
@@ -108,12 +145,12 @@ export default function CaseOne() {
             onClick={() => setIsCasefileOpen(false)}
           />
 
-          <div className="relative z-10 flex w-full max-w-4xl flex-col items-center">
+          <div className="relative z-10 flex w-full max-w-6xl flex-col items-center">
             <div className="relative w-full overflow-hidden">
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative aspect-4/3 w-6xl">
                 <Image
-                  src="/casefile1.png"
-                  alt="Case 1 file"
+                  src="/casefileone.png"
+                  alt="Casefile One"
                   fill
                   className="object-contain"
                 />
@@ -123,10 +160,16 @@ export default function CaseOne() {
             <button
               type="button"
               onClick={() => setIsCasefileOpen(false)}
-              className={`${actionButtonClassName} relative mt-5`}
+              className={`${actionButtonClassName} relative -mt-4`}
             >
               CLOSE
             </button>
+            <Link
+                href="/menu"
+                className={`${actionButtonClassName} mt-12`}
+                >
+                Give up
+            </Link>
           </div>
         </div>
       ) : null}
