@@ -92,7 +92,7 @@ export default function BookTestimonials({
           {/* Main menu page*/}
           <div className="group relative overflow-visible">
             <div className="absolute w-[200vw] h-[200vh] -top-[50vh] -left-[50vw] bg-black/80 opacity-0 transition-opacity duration-300 ease-in group-hover:opacity-100 pointer-events-none" />
-              <div className="flex flex-col items-center translate-x-20 hover:scale-[1.1]">
+              <div className="flex flex-col items-center translate-x-20 group-hover:scale-[1.1] group-hover:contrast-110">
                 <Link href="/">
                   <Image
                     src="/backtomenu.png"
