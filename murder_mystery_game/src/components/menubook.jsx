@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
+import "@/app/globals.css";
 import { useMediaQuery } from '@react-hook/media-query';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -44,14 +45,14 @@ export default function BookTestimonials({
       {/* Background image */}
       <Image
         src="/menubg.png"
-        alt="Book background"
+        alt="Background"
         fill
         priority
         className="object-cover"
       />
 
       {/* Optional dark overlay */}
-      <div className="absolute inset-0 bg-black/25" />
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Flipbook aligned over the book in the background */}
       <div className="absolute left-1/2 top-[50%] z-10 -translate-x-1/2 -translate-y-1/2">
@@ -89,21 +90,44 @@ export default function BookTestimonials({
         >
 
           {/* Main menu page*/}
-          <div className="flex h-full w-full items-center justify-end">
-              <div className="flex flex-col items-center translate-x-20">
+          <div className="group relative overflow-visible">
+            <div className="absolute w-[200vw] h-[200vh] -top-[50vh] -left-[50vw] bg-black/80 opacity-0 transition-opacity duration-300 ease-in group-hover:opacity-100 pointer-events-none" />
+              <div className="flex flex-col items-center translate-x-20 hover:scale-[1.1]">
                 <Link href="/">
                   <Image
                     src="/backtomenu.png"
                     alt="Back to main menu"
                     width={520}
                     height={600}
-                    className="object-contain hover:scale-[1.1]"
+                    className="object-contain z-20"
                   />
+                  <h1 className={`${imfell.className} text-center text-4xl text-[#5A0F0F] -translate-y-45`}>
+                    Main Menu
+                  </h1>
                 </Link>
-                <h1 className={`${imfell.className} text-center text-4xl text-[#5A0F0F] -translate-y-42`}>
-                  Main Menu
-                </h1>
               </div>
+              <Image
+                src="/blood.png"
+                alt="Blood"
+                width={20}
+                height={30}
+                className="absolute bottom-[-11%] left-[67.2%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-200 group-hover:animate-[blood-drip_5s_linear_infinite] pointer-events-none"
+              />
+              <Image
+                src="/blood1.png"
+                alt="Blood"
+                width={10}
+                height={30}
+                className="absolute top-[5%] left-[28.6%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip-short_8s_linear_infinite] pointer-events-none"
+              />
+              <Image
+                src="/blood1.png"
+                alt="Blood"
+                width={8}
+                height={30}
+                className="absolute top-[12%] left-[39.5%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip_5s_linear_infinite] pointer-events-none"
+              />
+              
           </div>
 
           {/* Cases page */}
