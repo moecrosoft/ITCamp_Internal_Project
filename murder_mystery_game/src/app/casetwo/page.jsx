@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
 import { Caesar_Dressing, Nosifer, Cinzel} from "next/font/google";
 
 const caesarDressing = Caesar_Dressing({
@@ -21,8 +22,11 @@ const cinzel = Cinzel({
 });
 
 export default function CaseTwo() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const shouldShowIntro = searchParams.get("intro") === "1";
   const [isCasefileOpen, setIsCasefileOpen] = useState(false);
-  const [showIntroPanel, setShowIntroPanel] = useState(true);
+  const [showIntroPanel, setShowIntroPanel] = useState(shouldShowIntro);
 
   useEffect(() => {
     if (!isCasefileOpen) {
@@ -41,12 +45,15 @@ export default function CaseTwo() {
   }, [isCasefileOpen]);
 
   useEffect(() => {
+    if (!shouldShowIntro) return;
+
     const timer = window.setTimeout(() => {
       setShowIntroPanel(false);
+      router.replace("/caseone");
     }, 3000);
 
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [shouldShowIntro, router]);
 
   const toggleCasefile = () => {
     setIsCasefileOpen((open) => !open);

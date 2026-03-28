@@ -208,7 +208,7 @@ export default function BookTestimonials({
 
               <div className="mt-8 flex flex-col items-center gap-6">
                 <Link
-                  href="/caseone"
+                  href="/caseone?intro=1"
                   className="group block w-full shrink-0 transition"
                 >
                   <div className="relative mx-auto aspect-4/3 w-full max-w-28rem">
@@ -284,7 +284,7 @@ export default function BookTestimonials({
 
               <div className="mt-8 flex flex-col items-center gap-6">
                 <Link
-                  href="/casetwo"
+                  href="/casetwo?intro=1"
                   className="group block w-full shrink-0 transition"
                 >
                   <div className="relative mx-auto aspect-4/3 w-full max-w-28rem">
