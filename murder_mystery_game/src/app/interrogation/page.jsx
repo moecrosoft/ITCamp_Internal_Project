@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -58,10 +58,14 @@ export default function InterrogationPage() {
   const characterId = searchParams.get("characterId");
   const storageKey =
     storyId && characterId ? `interrogation_chat_${storyId}_${characterId}` : null;
+  const notesStorageKey = storyId ? `interrogation_notes_${storyId}` : null;
 
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [notes, setNotes] = useState("");
+  const chatHydratedRef = useRef(false);
+  const notesHydratedRef = useRef(false);
 
   const characterPosition =
   CHARACTER_POSITIONS[storyId]?.[characterId] ||
@@ -79,16 +83,29 @@ export default function InterrogationPage() {
     const savedMessages = localStorage.getItem(storageKey);
     if (savedMessages) {
       setMessages(JSON.parse(savedMessages));
-      return;
+    } else {
+      setMessages([]);
     }
-
-    setMessages([]);
+    chatHydratedRef.current = true;
   }, [storageKey]);
 
   useEffect(() => {
-    if (!storageKey) return;
+    if (!storageKey || !chatHydratedRef.current) return;
     localStorage.setItem(storageKey, JSON.stringify(messages));
   }, [messages, storageKey]);
+
+  useEffect(() => {
+    if (!notesStorageKey) return;
+
+    const savedNotes = localStorage.getItem(notesStorageKey);
+    setNotes(savedNotes || "");
+    notesHydratedRef.current = true;
+  }, [notesStorageKey]);
+
+  useEffect(() => {
+    if (!notesStorageKey || !notesHydratedRef.current) return;
+    localStorage.setItem(notesStorageKey, notes);
+  }, [notes, notesStorageKey]);
 
   async function askAI() {
     if (!question.trim() || !storyId || !characterId) return;
@@ -173,6 +190,29 @@ export default function InterrogationPage() {
         >
           Back
         </Link>
+
+        <div className="absolute left-[16%] top-[10%] z-10 w-[clamp(10%,20%,20%)] aspect-[3/4]">
+          <Image
+            src="/redscroll.png"
+            alt="Notes"
+            fill
+            className="object-contain brightness-90 drop-shadow-[0_24px_35px_rgba(0,0,0,0.45)]"
+          />
+
+          <div className="absolute inset-[16%_20%_8%_22%]">
+            <div className="flex h-full flex-col">
+              <p className={`${cinzel.className} text-center text-xl text-[#000000]/80`}>
+                Notes
+              </p>
+              <textarea
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                placeholder="Quick clues..."
+                className="h-full w-full resize-none px-1 text-[12px] leading-5 text-[#000000]/80 placeholder:text-[#000000]/60 focus:outline-none"
+              />
+            </div>
+          </div>
+        </div>
 
         <div className={`absolute z-10  ${characterPosition}`}>
           {characterImage ? (
