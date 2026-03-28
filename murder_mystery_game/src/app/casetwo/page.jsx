@@ -67,7 +67,7 @@ export default function CaseTwo() {
 
           {/* Walt */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=knives_out&characterId=son"
             className="absolute z-10 top-[19.5%] left-[7.8%] w-[clamp(10%,35%,35%)] aspect-[3/4]"
           >
             <Image
@@ -82,7 +82,7 @@ export default function CaseTwo() {
 
           {/* Marta */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=knives_out&characterId=nurse"
             className="group absolute z-10 top-[36%] right-[41.6%] w-[clamp(15%,19%,19%)] aspect-[3/4]"
           >
             <Image
@@ -95,7 +95,7 @@ export default function CaseTwo() {
 
           {/* Hugh */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=knives_out&characterId=grandson"
             className="group absolute z-10 top-[16%] right-[18.3%] w-[clamp(12%,27%,27%)] aspect-[3/4]"
           >
             <Image
@@ -108,7 +108,7 @@ export default function CaseTwo() {
 
           {/* Lin */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=knives_out&characterId=daughter"
             className="group absolute z-10 top-[42%] right-[1.2%] w-[clamp(10%,28%,28%)] aspect-[3/4]"
           >
             <Image

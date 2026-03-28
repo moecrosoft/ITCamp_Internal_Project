@@ -67,7 +67,7 @@ export default function CaseOne() {
 
           {/* Son */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=sterling_estate&characterId=son"
             className="group absolute z-10 top-[50%] right-[32%] w-[clamp(10%,14%,14%)] aspect-[3/4]"
           >
             <Image
@@ -88,7 +88,7 @@ export default function CaseOne() {
 
           {/* Driver */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=sterling_estate&characterId=driver"
             className="group absolute z-10 top-[41%] right-[0.2%] w-[clamp(15%,30%,30%)] aspect-[3/4]"
           >
             <Image
@@ -107,7 +107,7 @@ export default function CaseOne() {
 
           {/* Maid */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=sterling_estate&characterId=maid"
             className="group absolute z-10 top-[38%] left-[25%] w-[clamp(12%,18%,18%)] aspect-[3/4]"
           >
             <Image
@@ -126,7 +126,7 @@ export default function CaseOne() {
 
           {/* Wife */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=sterling_estate&characterId=wife"
             className="group absolute z-10 top-[55%] left-[15%] w-[clamp(10%,14%,14%)] aspect-[3/4] -rotate-5"
           >
             <Image
@@ -145,7 +145,7 @@ export default function CaseOne() {
 
           {/* Gardener */}
           <Link
-            href="/interrogation"
+            href="/interrogation?storyId=sterling_estate&characterId=gardener"
             className="group absolute z-10 bottom-[3%] left-[5%] w-[clamp(10%,14%,14%)] aspect-[3/4] -rotate-3"
           >
             <Image
