@@ -106,26 +106,69 @@ export default function BookTestimonials({
                   </h1>
                 </Link>
               </div>
+  
               <Image
-                src="/blood.png"
+                src="/blood1.png"
+                alt="Blood"
+                width={18}
+                height={30}
+                className="absolute top-[3%] left-[28%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip-short_8s_linear_infinite] pointer-events-none"
+              />
+              <Image
+                src="/blood2.png"
                 alt="Blood"
                 width={20}
                 height={30}
-                className="absolute bottom-[-11%] left-[67.2%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-200 group-hover:animate-[blood-drip_5s_linear_infinite] pointer-events-none"
+                className="absolute top-[6%] left-[34.5%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip-short_8s_linear_infinite] pointer-events-none"
+              />
+              <Image
+                src="/blood2.png"
+                alt="Blood"
+                width={15}
+                height={30}
+                className="absolute top-[6%] left-[31.2%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip_8s_linear_infinite] pointer-events-none"
+              />
+              <Image
+                src="/blood2.png"
+                alt="Blood"
+                width={12}
+                height={30}
+                className="absolute top-[9%] left-[39.2%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip_8s_linear_infinite] pointer-events-none"
               />
               <Image
                 src="/blood1.png"
+                alt="Blood"
+                width={13}
+                height={30}
+                className="absolute top-[50%] left-[28%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip-short_8s_linear_infinite] pointer-events-none"
+              />
+              <Image
+                src="/blood1.png"
+                alt="Blood"
+                width={14}
+                height={30}
+                className="absolute bottom-[-12%] left-[38.2%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip-short_10s_linear_infinite] pointer-events-none"
+              />
+              <Image
+                src="/blood2.png"
+                alt="Blood"
+                width={15}
+                height={30}
+                className="absolute top-[15%] right-[0.5%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip_8s_linear_infinite] pointer-events-none"
+              />
+              <Image
+                src="/blood2.png"
                 alt="Blood"
                 width={10}
                 height={30}
-                className="absolute top-[5%] left-[28.6%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip-short_8s_linear_infinite] pointer-events-none"
+                className="absolute bottom-[-10%] left-[41.5%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip-short_8s_linear_infinite] pointer-events-none"
               />
               <Image
-                src="/blood1.png"
+                src="/blood2.png"
                 alt="Blood"
-                width={8}
+                width={18}
                 height={30}
-                className="absolute top-[12%] left-[39.5%] opacity-0 group-hover:opacity-100 group-hover:brightness-60 group-hover:contrast-150 group-hover:animate-[blood-drip_5s_linear_infinite] pointer-events-none"
+                className="absolute bottom-[-18%] right-[17.8%] opacity-0 group-hover:opacity-100 group-hover:brightness-40 group-hover:contrast-150 group-hover:animate-[blood-drip-short_8s_linear_infinite] pointer-events-none"
               />
               
           </div>
