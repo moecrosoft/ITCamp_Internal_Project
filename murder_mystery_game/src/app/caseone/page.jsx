@@ -182,13 +182,13 @@ export default function CaseOne() {
             </div>
           </div>
 
-          <div className={`absolute z-20 w-[75%] h-[20%] left-1/2 top-2/5 -translate-x-1/2 transition-all duration-400 ${
+          <div className={`absolute z-20 w-[80%] h-[20%] left-1/2 top-2/5 -translate-x-1/2 transition-all duration-400 ${
                 showIntroPanel
                   ? "translate-y-0 opacity-100 brightness-250"
                   : "pointer-events-none translate-y-4 opacity-0"
               }`}
             >
-              <h1 className={`${cinzel.className} text-center text-6xl text-[#5A0F0F] py-20 tracking-widest rounded-[2.5rem] border border-white/10 bg-black/80 backdrop-blur-1xl`}>
+              <h1 className={`${cinzel.className} text-center text-5xl text-[#5A0F0F] py-20 tracking-widest rounded-[2.5rem] border border-white/10 bg-black/80 backdrop-blur-1xl`}>
                 The Murder at the Sterling Estate
               </h1>
             </div>

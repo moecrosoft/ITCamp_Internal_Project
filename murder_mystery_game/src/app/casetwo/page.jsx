@@ -137,7 +137,7 @@ export default function CaseTwo() {
             </div>
           </div>
 
-          <div className={`absolute z-20 w-[55%] h-[20%] left-1/2 top-2/5 -translate-x-1/2 transition-all duration-400 ${
+          <div className={`absolute z-20 w-[75%] h-[20%] left-1/2 top-2/5 -translate-x-1/2 transition-all duration-400 ${
                 showIntroPanel
                   ? "translate-y-0 opacity-100 brightness-250"
                   : "pointer-events-none translate-y-4 opacity-0"
