@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Caesar_Dressing, Nosifer } from "next/font/google";
+import { Caesar_Dressing, Nosifer, Cinzel} from "next/font/google";
 
 const caesarDressing = Caesar_Dressing({
   subsets: ["latin"],
@@ -13,6 +13,11 @@ const caesarDressing = Caesar_Dressing({
 const nosifer = Nosifer({
   subsets: ["latin"],
   weight: "400",
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: "500",
 });
 
 export default function CaseOne() {
@@ -175,20 +180,18 @@ export default function CaseOne() {
                 />
               </button>
             </div>
-
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className={`w-full z-20 transition-all duration-700 ${
-                  showIntroPanel
-                    ? "translate-y-0 opacity-100"
-                    : "pointer-events-none translate-y-4 opacity-0"
-                }`}
-              >
-                <h1 className={`${nosifer.className} text-center text-6xl text-[#5A0F0F]`}>
-                  The Murder at the Sterling Estate
-                </h1>
-              </div>
-            </div>
           </div>
+
+          <div className={`absolute z-20 w-[75%] h-[20%] left-1/2 top-2/5 -translate-x-1/2 transition-all duration-400 ${
+                showIntroPanel
+                  ? "translate-y-0 opacity-100 brightness-250"
+                  : "pointer-events-none translate-y-4 opacity-0"
+              }`}
+            >
+              <h1 className={`${cinzel.className} text-center text-6xl text-[#5A0F0F] py-20 tracking-widest rounded-[2.5rem] border border-white/10 bg-black/80 backdrop-blur-1xl`}>
+                The Murder at the Sterling Estate
+              </h1>
+            </div>
 
           {isCasefileOpen ? (
             <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 px-4 py-6">
