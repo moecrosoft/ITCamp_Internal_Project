@@ -206,7 +206,7 @@ export default function InterrogationPage() {
             </div>
             <Link
               href={backHref}
-              className={`${caesarDressing.className} absolute left-19 bottom-[-32] z-20 text-3xl tracking-[0.14em] text-black transition hover:text-white`}
+              className={`${caesarDressing.className} absolute left-19 bottom-[-32] z-20 text-3xl tracking-[0.14em] text-black/70 transition hover:text-black`}
             >
               Back
             </Link>
