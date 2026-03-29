@@ -391,18 +391,26 @@ export default function BookTestimonials({
                   </div>
                 </Link>
               </div>
-              <div className="flex flex-col items-center gap-6 mt-6">
-                <p className={`${cinzel.className} -mt-5 text-center text-sm text-[#5A0F0F]`}>
-                    {itc.casefile.headline}
-                </p>
-                <div className="transition-all duration-300 hover:scale-0 hover:opacity-0">
+              <div className="flex flex-col items-center">
+                <div className="group relative">
                   <Image
-                        src="/paperweight.png"
-                        alt="Heavy paperweight"
+                        src="/tea.png"
+                        alt="Tea"
                         width="80"
                         height="100"
+                        className="transition-opacity duration-300 ease-in group-hover:opacity-0"
+                      />
+                  <Image
+                        src="/tea_hover.png"
+                        alt="Tea"
+                        width="80"
+                        height="100"
+                        className="-translate-y-33 opacity-0 duration-300 ease-in group-hover:opacity-100"
                       />
                 </div>
+                <p className={`${cinzel.className} -translate-y-25 px-8 text-center text-lg text-[#5A0F0F]`}>
+                  {itc.casefile.headline}
+                </p>
               </div>
             </div>
           </div>
@@ -425,6 +433,57 @@ export default function BookTestimonials({
                   <h1 className="font-bold text-xl">Objective</h1>
                   {itc.casefile.objective}
               </div>
+            </div>
+          </div>
+
+        {/* Extra left page */}
+          <div className="flex h-full w-full items-center justify-end">
+            <div
+              className="translate-x-35 translate-y-2 flex h-[96%] w-[78%] flex-col justify-start px-10 py-10 text-[#2b1d14]"
+              style={{
+                backgroundImage: "url('/leftpaper.png')",
+                backgroundSize: '100% 100%',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
+              
+                <div className="group flex flex-1 items-center justify-center">
+                  <div className="absolute w-[200vw] h-[200vh] -top-[50vh] -left-[50vw] bg-black/100 opacity-0 transition-opacity duration-300 ease-in group-hover:opacity-100 pointer-events-none" />
+                    <Image
+                      src="/drog.png"
+                      alt="Drog"
+                      width="300"
+                      height="100"
+                      className="transition-opacity duration-300 ease-in group-hover:opacity-0"
+                    />
+                    <div className="absolute flex items-center justify-center w-[450] h-[320] rounded-3xl bg-[#3B2A1A]/10 border border-white/40 backdrop-blur-md opacity-0 duration-300 ease-in group-hover:opacity-100">
+                      <Image
+                        src="/drog_hover.gif"
+                        alt="Gif"
+                        width="400"
+                        height="100"
+                        className="opacity-0 duration-300 ease-in group-hover:opacity-100 rounded-xl"
+                      />
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+          {/* Extra right page */}
+          <div className="flex h-full w-full items-center justify-start">
+            <div
+              className="-translate-x-3 flex flex-1 items-center translate-y-2 h-[96%] w-[78%]  px-10 py-10 text-[#2b1d14]"
+              style={{
+                backgroundImage: "url('/rightpaper.png')",
+                backgroundSize: '100% 100%',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
+              <p className={`${cinzel.className} font-extrabold text-center text-2xl text-[#5A0F0F]`}>
+               A new case will begin when another body is found
+              </p>
             </div>
           </div>
         </HTMLFlipBook>
