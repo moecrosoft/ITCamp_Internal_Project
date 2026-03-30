@@ -382,7 +382,7 @@ export default function BookTestimonials({
 
                     <div className="absolute aspect-16/10 inset-[10%] overflow-hidden w-[20rem] rounded-[0.3rem] translate-x-5.5 translate-y-4 rotate-1">
                     <Image
-                      src="/casethree.png"
+                      src="/casethreepreview.png"
                       alt="Open Case 3"
                       fill
                       className="object-cover transition duration-500 group-hover:scale-[1.2]"

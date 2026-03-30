@@ -31,6 +31,12 @@ const CHARACTER_ASSETS = {
     daughter: "/c_assets/lin_ir.png",
     son: "/c_assets/walt_ir.png",
   },
+  sim_it_club: {
+    vp: "/c_assets/michelle_ir.png",
+    partnership: "/c_assets/winston_ir.png",
+    technical: "/c_assets/yanmei_ir.png",
+    secretary: "/c_assets/rey_ir.png",
+  }
 };
 
 const CHARACTER_POSITIONS = {
@@ -47,12 +53,18 @@ const CHARACTER_POSITIONS = {
     daughter: "left-[40%] top-[34.5%] w-[clamp(10%,20%,20%)] aspect-[3/4]",
     son: "left-[37.5%] top-[26%] w-[clamp(10%,25%,25%)] aspect-[3/4]",
   },
+  sim_it_club: {
+    vp: "left-[38%] top-[32.5%] w-[clamp(10%,24%,24%)] aspect-[3/4]",
+    partnership: "left-[39%] top-[27%] w-[clamp(10%,24%,24%)] aspect-[3/4]",
+    technical: "left-[40%] top-[32%] w-[clamp(10%,24%,24%)] aspect-[3/4]",
+  }
 };
 
 
 const STORY_ROUTES = {
   sterling_estate: "/caseone",
   knives_out: "/casetwo",
+  sim_it_club: "/casethree"
 };
 
 export default function InterrogationPage() {
