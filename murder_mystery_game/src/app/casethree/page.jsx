@@ -26,6 +26,7 @@ export default function CaseThree() {
   const router = useRouter();
   const shouldShowIntro = searchParams.get("intro") === "1";
   const [isCasefileOpen, setIsCasefileOpen] = useState(false);
+  const [isAccusationConfirmOpen, setIsAccusationConfirmOpen] = useState(false);
   const [showIntroPanel, setShowIntroPanel] = useState(shouldShowIntro);
 
   useEffect(() => {
@@ -57,6 +58,18 @@ export default function CaseThree() {
 
   const toggleCasefile = () => {
     setIsCasefileOpen((open) => !open);
+  };
+
+  const openAccusationConfirm = () => {
+    setIsAccusationConfirmOpen(true);
+  };
+
+  const closeAccusationConfirm = () => {
+    setIsAccusationConfirmOpen(false);
+  };
+
+  const goToAccusation = () => {
+    router.replace("/accusation?storyId=sim_it_club");
   };
 
   const actionButtonClassName = `${caesarDressing.className} text-4xl tracking-[0.14em] text-white transition hover:text-[#B22222]`;
@@ -186,6 +199,48 @@ export default function CaseThree() {
                     >
                     Give up
                 </Link>
+                <button
+                  type="button"
+                  onClick={openAccusationConfirm}
+                  className={`${actionButtonClassName} text-xl translate-y-12 cursor-pointer`}
+                >
+                  Accuse
+                </button>
+              </div>
+            </div>
+          ) : null}
+
+          {isAccusationConfirmOpen ? (
+            <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/65 px-4">
+              <div
+                className="absolute inset-0"
+                onClick={closeAccusationConfirm}
+              />
+
+              <div className="relative z-10 w-full max-w-2xl rounded-[2rem] border border-red-900/40 bg-black/85 p-8 text-center text-white shadow-2xl backdrop-blur-md">
+                <h2 className={`${cinzel.className} text-4xl text-red-300`}>
+                  Enter Accusation
+                </h2>
+                <p className="mt-5 text-lg leading-8 text-zinc-200">
+                  Are you sure you want to go into accusation? You can&apos;t go back once you commit.
+                </p>
+
+                <div className="mt-10 flex items-center justify-center gap-6">
+                  <button
+                    type="button"
+                    onClick={closeAccusationConfirm}
+                    className={`${actionButtonClassName} cursor-pointer text-2xl`}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goToAccusation}
+                    className={`${actionButtonClassName} cursor-pointer text-2xl`}
+                  >
+                    Yes, Accuse
+                  </button>
+                </div>
               </div>
             </div>
           ) : null}

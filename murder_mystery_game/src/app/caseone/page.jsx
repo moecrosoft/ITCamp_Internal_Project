@@ -26,6 +26,7 @@ export default function CaseOne() {
   const router = useRouter();
   const shouldShowIntro = searchParams.get("intro") === "1";
   const [isCasefileOpen, setIsCasefileOpen] = useState(false);
+  const [isAccusationConfirmOpen, setIsAccusationConfirmOpen] = useState(false);
   const [showIntroPanel, setShowIntroPanel] = useState(shouldShowIntro);
 
   useEffect(() => {
@@ -57,6 +58,18 @@ export default function CaseOne() {
 
   const toggleCasefile = () => {
     setIsCasefileOpen((open) => !open);
+  };
+
+  const openAccusationConfirm = () => {
+    setIsAccusationConfirmOpen(true);
+  };
+
+  const closeAccusationConfirm = () => {
+    setIsAccusationConfirmOpen(false);
+  };
+
+  const goToAccusation = () => {
+    router.replace("/accusation?storyId=sterling_estate");
   };
 
   const actionButtonClassName = `${caesarDressing.className} text-4xl tracking-[0.14em] text-white transition hover:text-[#B22222]`;
@@ -169,11 +182,19 @@ export default function CaseOne() {
             />
           </Link>
 
-          
-
-          <div className="relative flex min-h-dvh flex-col">
-            <div className="relative flex items-start justify-center px-6 py-6 md:px-10">
-
+            <div className="relative flex flex-row px-6 py-6 md:px-10">
+              <button
+                  type="button"
+                  onClick={openAccusationConfirm}
+                  className={`${actionButtonClassName} absolute text-xl cursor-pointer`}
+                >
+                  <Image
+                    src="/accuse.png"
+                    alt="Accuse"
+                    width="80"
+                    height="100"
+                  />
+              </button>
               <button
                 type="button"
                 onClick={toggleCasefile}
@@ -186,7 +207,6 @@ export default function CaseOne() {
                     height="100"
                 />
               </button>
-            </div>
           </div>
 
           <div className={`absolute z-20 w-[80%] h-[20%] left-1/2 top-2/5 -translate-x-1/2 transition-all duration-400 ${
@@ -230,6 +250,41 @@ export default function CaseOne() {
                     >
                     Give up
                 </Link>
+              </div>
+            </div>
+          ) : null}
+
+          {isAccusationConfirmOpen ? (
+            <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/65 px-4">
+              <div
+                className="absolute inset-0"
+                onClick={closeAccusationConfirm}
+              />
+
+              <div className="relative z-10 w-full max-w-2xl rounded-[2rem] border border-red-900/40 bg-black/85 p-8 text-center text-white shadow-2xl backdrop-blur-md">
+                <h2 className={`${cinzel.className} text-4xl text-red-300`}>
+                  Enter Accusation
+                </h2>
+                <p className="mt-5 text-lg leading-8 text-zinc-200">
+                  Are you sure you want to go into accusation? You can&apos;t go back once you commit.
+                </p>
+
+                <div className="mt-10 flex items-center justify-center gap-6">
+                  <button
+                    type="button"
+                    onClick={closeAccusationConfirm}
+                    className={`${actionButtonClassName} cursor-pointer text-2xl`}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goToAccusation}
+                    className={`${actionButtonClassName} cursor-pointer text-2xl`}
+                  >
+                    Yes, Accuse
+                  </button>
+                </div>
               </div>
             </div>
           ) : null}
