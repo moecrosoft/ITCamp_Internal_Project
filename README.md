@@ -5,7 +5,7 @@
 
 | Name               | Role        | GitHub           |
 |-------------------|------------|-----------------|
-| Moe               | Member | [moesg10](https://github.com/moecrosoft) |
+| Moe               | Member | [moecrosoft](https://github.com/moecrosoft) |
 | Nan Phyu Sin Maung | Member     | [nanpsm](https://github.com/nanpsm) |
 | Endyano Ang        | Member     | [Endyano](https://github.com/Endyano) |
 | Vicky Yang         | Member     | [vicky1234500](https://github.com/vicky1234500) |
