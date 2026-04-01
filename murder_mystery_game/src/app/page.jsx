@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Caesar_Dressing, Nosifer } from "next/font/google";
 
@@ -45,24 +46,26 @@ function MenuButton({ children, href, onClick, disabled = false }) {
 }
 
 export default function Home() {
+  const [showCreditModal, setShowCreditModal] = useState(false);
   const [showQuitModal, setShowQuitModal] = useState(false);
   const [isCancelHovered, setIsCancelHovered] = useState(false);
 
   useEffect(() => {
-    if (!showQuitModal) {
+    if (!showQuitModal && !showCreditModal) {
       return undefined;
     }
 
     const handleEscape = (event) => {
       if (event.key === "Escape") {
         setShowQuitModal(false);
+        setShowCreditModal(false);
       }
     };
 
     window.addEventListener("keydown", handleEscape);
 
     return () => window.removeEventListener("keydown", handleEscape);
-  }, [showQuitModal]);
+  }, [showQuitModal, showCreditModal]);
 
   const handleQuit = () => {
     window.close();
@@ -83,7 +86,7 @@ export default function Home() {
         <nav className="fixed bottom-[clamp(3rem,9vh,8rem)] left-[clamp(3rem,9vw,8rem)] z-20">
           <div className="flex flex-col items-start gap-5 md:gap-7">
             <MenuButton href="/menu">Play</MenuButton>
-            <MenuButton href="/suspects">Credit</MenuButton>
+            <MenuButton onClick={() => setShowCreditModal(true)}>Credit</MenuButton>
             <MenuButton onClick={() => setShowQuitModal(true)}>Quit</MenuButton>
           </div>
         </nav>
@@ -160,6 +163,27 @@ export default function Home() {
             <div className="absolute inset-0 z-0">
               <div className="h-full w-full bg-[linear-gradient(180deg,rgba(0,0,0,0.05)_0%,rgba(0,0,0,0.12)_100%)]" />
             </div>
+          </div>
+        </div>
+      ) : null}
+
+      {showCreditModal ? (
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/65 px-6 py-8">
+          <button
+            type="button"
+            aria-label="Close credits"
+            className="absolute inset-0"
+            onClick={() => setShowCreditModal(false)}
+          />
+
+          <div className="relative z-10 aspect-[4/3] w-[min(92vw,1200px)]">
+            <Image
+              src="/credit.png"
+              alt="Credit"
+              fill
+              priority
+              className="object-contain drop-shadow-[0_30px_80px_rgba(0,0,0,0.8)]"
+            />
           </div>
         </div>
       ) : null}

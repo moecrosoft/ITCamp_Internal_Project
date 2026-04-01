@@ -266,7 +266,7 @@ export default function CaseOne() {
                   Enter Accusation?
                 </h2>
                 <p className="mt-5 text-xl leading-8 text-zinc-400">
-                  Are you sure? There's no turning back.
+                  Are you sure? There&apos;s no turning back.
                 </p>
 
                 <div className="mt-5 flex items-center justify-center gap-10">
