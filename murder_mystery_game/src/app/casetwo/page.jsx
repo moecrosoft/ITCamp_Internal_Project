@@ -219,15 +219,15 @@ export default function CaseTwo() {
                 onClick={closeAccusationConfirm}
               />
 
-              <div className="relative z-10 w-full max-w-2xl rounded-[2rem] border border-red-900/40 bg-black/85 p-8 text-center text-white shadow-2xl backdrop-blur-md">
-                <h2 className={`${cinzel.className} text-4xl text-red-300`}>
-                  Enter Accusation
+              <div className="relative w-full max-w-2xl rounded-[2rem] border border-red-900/40 bg-black/85 p-8 text-center text-white shadow-2xl backdrop-blur-md">
+                <h2 className={`${cinzel.className} text-4xl text-[#B22222]`}>
+                  Enter Accusation?
                 </h2>
-                <p className="mt-5 text-lg leading-8 text-zinc-200">
-                  Are you sure you want to go into accusation? You can&apos;t go back once you commit.
+                <p className="mt-5 text-xl leading-8 text-zinc-400">
+                  Are you sure? There's no turning back.
                 </p>
 
-                <div className="mt-10 flex items-center justify-center gap-6">
+                <div className="mt-5 flex items-center justify-center gap-10">
                   <button
                     type="button"
                     onClick={closeAccusationConfirm}
@@ -240,7 +240,7 @@ export default function CaseTwo() {
                     onClick={goToAccusation}
                     className={`${actionButtonClassName} cursor-pointer text-2xl`}
                   >
-                    Yes, Accuse
+                    Proceed
                   </button>
                 </div>
               </div>
