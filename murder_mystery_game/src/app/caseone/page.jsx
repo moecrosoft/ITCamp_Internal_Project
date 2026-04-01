@@ -186,7 +186,7 @@ export default function CaseOne() {
               <button
                   type="button"
                   onClick={openAccusationConfirm}
-                  className={`${actionButtonClassName} absolute text-xl cursor-pointer`}
+                  className={`${actionButtonClassName} absolute right-6 top-6 hover:rotate-10 cursor-pointer`}
                 >
                   <Image
                     src="/accuse.png"
@@ -198,7 +198,7 @@ export default function CaseOne() {
               <button
                 type="button"
                 onClick={toggleCasefile}
-                className="absolute right-6 top-6 md:right-6 md:top-6 hover:rotate-10"
+                className="absolute right-30 top-6 hover:rotate-10"
               >
                 <Image
                     src="/casefiletoggle.png"
