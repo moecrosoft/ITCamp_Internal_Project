@@ -45,7 +45,7 @@ export default function AccusationPage() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(120,0,0,0.22),_rgba(0,0,0,0.92)_65%)]" />
 
       <div className="relative z-10 flex w-full max-w-6xl flex-col items-center">
-        <h1 className={`${cinzel.className} text-center text-5xl tracking-[0.16em] text-red-200`}>
+        <h1 className={`${cinzel.className} text-center text-5xl tracking-[0.16em] text-[#B22222]`}>
           Accusation Board
         </h1>
         <p className="mt-4 text-center text-sm uppercase tracking-[0.28em] text-zinc-400">

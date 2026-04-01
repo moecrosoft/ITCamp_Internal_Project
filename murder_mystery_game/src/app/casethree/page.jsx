@@ -139,23 +139,32 @@ export default function CaseThree() {
             />
           </Link>
 
-          <div className="relative flex min-h-dvh flex-col">
-            <div className="relative flex items-start justify-center px-6 py-6 md:px-10">
-
+        <div className="relative flex flex-row px-6 py-6 md:px-10">
+              <button
+                  type="button"
+                  onClick={openAccusationConfirm}
+                  className={`${actionButtonClassName} absolute right-6 top-6 hover:rotate-10 cursor-pointer focus:outline-none`}
+                >
+                  <Image
+                    src="/accuse.png"
+                    alt="Accuse"
+                    width="70"
+                    height="70"
+                  />
+              </button>
               <button
                 type="button"
                 onClick={toggleCasefile}
-                className="absolute right-6 top-6 md:right-6 md:top-6 hover:rotate-10"
+                className="absolute right-30 top-6 hover:rotate-10 focus:outline-none"
               >
                 <Image
                     src="/casefiletoggle.png"
                     alt="Casefile"
-                    width="80"
-                    height="100"
+                    width="70"
+                    height="70"
                 />
               </button>
-            </div>
-          </div>
+        </div>
 
           <div className={`absolute z-20 w-[75%] h-[20%] left-1/2 top-2/5 -translate-x-1/2 transition-all duration-400 ${
                 showIntroPanel
@@ -199,13 +208,6 @@ export default function CaseThree() {
                     >
                     Give up
                 </Link>
-                <button
-                  type="button"
-                  onClick={openAccusationConfirm}
-                  className={`${actionButtonClassName} text-xl translate-y-12 cursor-pointer`}
-                >
-                  Accuse
-                </button>
               </div>
             </div>
           ) : null}
