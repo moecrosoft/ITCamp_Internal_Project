@@ -202,13 +202,13 @@ export default function InterrogationPage() {
 
         <div className="absolute left-[16%] top-[10%] z-10 w-[clamp(10%,20%,20%)] aspect-[3/4]">
           <Image
-            src="/redscroll.png"
+            src="/scroll.png"
             alt="Notes"
             fill
-            className="object-contain brightness-90 drop-shadow-[0_24px_35px_rgba(0,0,0,0.45)]"
+            className="object-contain brightness-70 contrast-150 drop-shadow-[0_24px_35px_rgba(0,0,0,0.45)]"
           />
 
-          <div className="absolute inset-[16%_20%_15%_22%]">
+          <div className="absolute inset-[22%_18%_16%_20%]">
             <div className="flex h-full flex-col">
               <p className={`${cinzel.className} text-center text-xl text-[#000000]/80`}>
                 Notes
@@ -219,14 +219,15 @@ export default function InterrogationPage() {
                 placeholder="Quick clues..."
                 className="h-full w-full resize-none px-1 text-[12px] leading-5 text-[#000000]/80 placeholder:text-[#000000]/60 focus:outline-none"
               />
-            </div>
-            <Link
+              <Link
               href={backHref}
-              className={`${caesarDressing.className} absolute left-19 bottom-[-32] z-20 text-3xl tracking-[0.14em] text-black/70 transition hover:text-black`}
+              className={`${caesarDressing.className} flex translate-x-1 items-center justify-center text-2xl tracking-[0.14em] text-black/60 transition hover:text-black`}
             >
               Back
             </Link>
+            </div>
           </div>
+          
         </div>
 
         <div className={`absolute z-10  ${characterPosition}`}>

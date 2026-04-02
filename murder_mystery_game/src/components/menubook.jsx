@@ -234,13 +234,22 @@ export default function BookTestimonials({
                 <p className={`${cinzel.className} -mt-10 text-center text-sm text-[#5A0F0F]`}>
                     {sterling.casefile.headline}
                 </p>
-                <div className="transition-all duration-300 hover:scale-0 hover:opacity-0">
+                <div className="group relative">
+                  <Image
+                        src="/paper.png"
+                        alt="Paper"
+                        width="100"
+                        height="100"
+                        className="translate-y-8 transition-all opacity-0 duration-300 group-hover:opacity-100"
+                      />
                   <Image
                         src="/paperweight.png"
                         alt="Heavy paperweight"
                         width="80"
                         height="100"
+                        className="-translate-y-30 transition-all duration-300 group-hover:rotate-45 group-hover:translate-x-20"
                       />
+                  
                 </div>
               </div>
             </div>

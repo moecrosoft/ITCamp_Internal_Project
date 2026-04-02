@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Caesar_Dressing, Cinzel } from "next/font/google";
@@ -16,15 +17,23 @@ const caesarDressing = Caesar_Dressing({
   weight: "400",
 });
 
+const STORY_ROUTES = {
+  sterling_estate: "/caseone",
+  knives_out: "/casetwo",
+  sim_it_club: "/casethree",
+};
+
 const RESULT_CONTENT = {
   sterling_estate: {
     correct: {
-      title: "Sterling Solved",
+      title: "The Murderer Revealed",
       message: "You saw through the lies in the estate and named the real killer.",
+      image: "/caseonecorrect.png"
     },
     wrong: {
-      title: "The Estate Stays Silent",
-      message: "That accusation missed the truth. The Sterling household is still hiding its murderer.",
+      title: "The Real Culprit Escaped",
+      message: "You accused an innocent person. Your mistake ruined their life.",
+      image:"/justicefailed.png"
     },
   },
   knives_out: {
@@ -35,6 +44,7 @@ const RESULT_CONTENT = {
     wrong: {
       title: "The Family Walks Free",
       message: "That accusation does not hold. The true architect of the crime still hides in the family.",
+      image:"/justicefailed.png"
     },
   },
   sim_it_club: {
@@ -45,6 +55,7 @@ const RESULT_CONTENT = {
     wrong: {
       title: "Fatal Error Remains",
       message: "That choice was off the mark. The real killer is still hidden among the EXCO.",
+      image:"/justicefailed.png"
     },
   },
 };
@@ -95,50 +106,57 @@ export default function ResultPage() {
   }
 
   return (
-    <main className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-black px-6 py-10 text-white">
-      <div
-        className={`absolute inset-0 ${
-          isCorrect
-            ? "bg-[radial-gradient(circle_at_center,_rgba(28,90,40,0.28),_rgba(0,0,0,0.95)_68%)]"
-            : "bg-[radial-gradient(circle_at_center,_rgba(90,0,0,0.3),_rgba(0,0,0,0.95)_68%)]"
-        }`}
-      />
+    <main className="relative min-h-dvh aspect-[16/9] bg-black overflow-hidden">
+      {resultConfig.image ? (
+          <div>
+            <Image
+              src={resultConfig.image}
+              alt={resultConfig.title}
+              fill
+              className="object-cover"
+            />
+            
 
-      <div className="relative z-10 w-full max-w-3xl rounded-[2rem] border border-white/10 bg-black/85 p-10 text-center shadow-2xl backdrop-blur-md">
-        <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
-          {story.title}
-        </p>
-        <h1
-          className={`${cinzel.className} mt-4 text-5xl ${
-            isCorrect ? "text-emerald-300" : "text-red-300"
-          }`}
-        >
-          {resultConfig.title}
-        </h1>
-        <p className="mt-6 text-lg leading-8 text-zinc-300">
-          {resultConfig.message}
-        </p>
+            <div className={`absolute left-[10%] bottom-[20%] rounded-[2rem] text-center backdrop-blur-xs border border-white/30 p-10 ${
+              isCorrect ? "shadow-[0_0_8px_rgba(110,231,183,0.35),0_0_24px_rgba(110,231,183,0.25),0_0_48px_rgba(110,231,183,0.18)]"
+              : "shadow-[0_0_8px_rgba(178,34,34,0.35),0_0_24px_rgba(178,34,34,0.25),0_0_48px_rgba(178,34,34,0.18)]" }`}>
+              <p className="text-md tracking-[0.3em] text-zinc-300">
+                {isCorrect ? "Well Done, Detective!" : "Wrongful Conviction!"}
+              </p>
+              <h1
+                className={`${cinzel.className} mt-4 text-5xl ${
+                  isCorrect ? "text-emerald-300" : "text-[#B22222]"
+                }`}
+              >
+                {resultConfig.title}
+              </h1>
+              <p className="mt-6 text-md tracking-[0.1em] text-zinc-300">
+                {resultConfig.message}
+              </p>
 
-        <div className="mt-10 flex items-center justify-center gap-8">
-          {!isCorrect ? (
-            <button
-              type="button"
-              onClick={() => router.replace(`/accusation?storyId=${storyId}`)}
-              className={`${caesarDressing.className} text-2xl uppercase tracking-[0.14em] text-white transition hover:text-[#B22222]`}
-            >
-              Try Again
-            </button>
-          ) : null}
-          <Link
-            href="/menu"
-            className={`${caesarDressing.className} text-2xl uppercase tracking-[0.14em] text-white transition ${
-              isCorrect ? "hover:text-emerald-300" : "hover:text-[#B22222]"
-            }`}
-          >
-            Back To Menu
-          </Link>
-        </div>
-      </div>
+              <div className="mt-10 flex items-center justify-center gap-12">
+                {!isCorrect ? (
+                  <button
+                    type="button"
+                    onClick={() => router.replace(STORY_ROUTES[storyId] || "/menu")}
+                    className={`${caesarDressing.className} text-3xl uppercase tracking-[0.14em] text-white transition hover:text-[#B22222]`}
+                  >
+                    Try Again
+                  </button>
+                ) : null}
+                <Link
+                  href="/"
+                  className={`${caesarDressing.className} text-3xl uppercase tracking-[0.14em] text-white transition ${
+                    isCorrect ? "hover:text-emerald-300" : "hover:text-[#B22222]"
+                  }`}
+                >
+                  Back To Main Menu
+                </Link>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      
     </main>
   );
 }
