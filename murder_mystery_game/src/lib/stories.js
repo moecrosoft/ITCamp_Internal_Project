@@ -234,7 +234,7 @@ When you catch the mastermind in a lie they cannot explain, make your accusation
     },
 
     truth: {
-      murderer: 'hugh',
+      murderer: 'grandson',
       weapon: 'Tampered medicine bottles (failed), leading to suicide',
       motive: 'Harlan cut him out of the will entirely. He wanted to frame the nurse to invalidate the new will.'
     },
