@@ -70,7 +70,7 @@ const ACCUSATION_LAYOUTS = {
     suspects: [
       {
         id: "son",
-        image: "/c_assets/Walt_acc.png",
+        image: "/c_assets/walt_acc.png",
         className:
           "left-[6.5%] bottom-[-4%] w-[35%] aspect-[3/4] focus:outline-none grayscale transition duration-100 hover:grayscale-0",
       },
