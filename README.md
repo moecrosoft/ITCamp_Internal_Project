@@ -70,7 +70,9 @@ AI Integration: NPC dialogue system
 
 ## Deployment
 Access our game directly here
-```(vercel link here)```
+
+
+```https://crimsonmidnight.vercel.app```
 
 ## What Makes This Game Special
 This is not just a normal game.
