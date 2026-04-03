@@ -201,7 +201,7 @@ export default function Home() {
             <div className="relative z-10 flex flex-col items-center justify-center text-black/80 top-[15%] gap-2">
               <h1 className="text-xl uppercase">Made with very little sleep</h1>
               <span className="text-md uppercase">By</span>
-              <p className="text-xl uppercase px-6 py-4 text-[#FFFFFF] rounded-[2em] border border-white/40 bg-[#B22222] ">Michelle's Kids</p>
+              <p className="text-xl uppercase px-6 py-4 text-[#FFFFFF] rounded-[2em] border border-white/40 bg-[#B22222] ">Michelle&apos;s Kids</p>
               <div className="pt-10 flex flex-col items-center gap-5">
                 {members.map((member) => (
                   <a
@@ -233,7 +233,7 @@ export default function Home() {
                 <span className="text-[#B22222]/80"> Fuku, Michelle, Rey, Winston and YanMei</span> for their photo contributions.
               </div>
               <p className="pt-4">
-                "Please lower your expectations"
+                &quot;Please lower your expectations&quot;
               </p>
             </div>
           </div>
